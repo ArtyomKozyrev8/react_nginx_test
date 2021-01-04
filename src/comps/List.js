@@ -1,5 +1,9 @@
 import React from "react";
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 export default class List extends React.Component {
     constructor(props) {
         super(props);
@@ -17,7 +21,7 @@ export default class List extends React.Component {
     showList = () => {
         let liArray = []
         for (let i of this.state.items) {
-            liArray.push(<li> {i} </li>)
+            liArray.push(<li key={`${i}-${getRandomInt(100000)}`}> {i} </li>)
         }
         return liArray
     }
