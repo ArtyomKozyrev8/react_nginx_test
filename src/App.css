@@ -35,3 +35,18 @@ input[type=text] {
   display: flex; /* or inline-flex */
   flex-wrap: wrap;
 }
+
+.cookieBtn {
+  display: inline-block;
+}
+
+.cookieTxt {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.cookieDiv {
+  border: 1px solid black;
+  width: 350px;
+  margin-left: 2px;
+}
