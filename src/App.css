@@ -23,3 +23,15 @@ input[type=text] {
   margin: 4px 2px;
   padding: 3px;
 }
+
+.flexDiv {
+  min-width: 400px;
+  max-width: 450px;
+  border: 3px solid black;
+  margin: 5px;
+}
+
+.container {
+  display: flex; /* or inline-flex */
+  flex-wrap: wrap;
+}
