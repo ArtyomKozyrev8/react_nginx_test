@@ -1,11 +1,13 @@
 # Name the node stage "builder"
-FROM node:14 AS builder
+FROM node:14-alpine AS builder
 # Set working directory
 WORKDIR /app
 # Copy all files from current directory to working dir in image
 COPY . .
 # install node modules and build assets
-RUN npm run build
+RUN mkdir x
+
+RUN npm start
 
 FROM nginx:1.17.4-alpine
 
