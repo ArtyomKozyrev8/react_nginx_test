@@ -1,18 +1,8 @@
-# Name the node stage "builder"
-FROM node:14-alpine AS builder
-# Set working directory
-WORKDIR /usr/src
-
-RUN apk add --no-cache tzdata
-
-ENV TZ=Europe/Moscow
-
-# Copy all files from current directory to working dir in image
-COPY . .
-# install node modules and build assets
-
+FROM node:alpine as build
+WORKDIR /app
+COPY package*.json /app/
 RUN npm install
-
+COPY . .
 RUN npm run build
 
 FROM nginx:1.17.4-alpine
