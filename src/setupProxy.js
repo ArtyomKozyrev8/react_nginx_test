@@ -3,7 +3,7 @@ module.exports = function(app) {
     app.use(
         '/api',
         createProxyMiddleware({
-            target: 'http://localhost:8090',
+            target: 'http://aio_re_serv:8090',
             ws: true,
             changeOrigin: true
         })
