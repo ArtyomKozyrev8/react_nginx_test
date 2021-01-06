@@ -10,9 +10,10 @@ ENV TZ=Europe/Moscow
 # Copy all files from current directory to working dir in image
 COPY . .
 # install node modules and build assets
-RUN mkdir x
 
-RUN npm start
+RUN npm install
+
+RUN npm run build
 
 FROM nginx:1.17.4-alpine
 
