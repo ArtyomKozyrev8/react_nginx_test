@@ -7,7 +7,7 @@ RUN npm run build
 
 FROM nginx:1.17.4-alpine
 
-COPY --from builder /app/ /app/
+COPY --from=builder /app/ /app/
 
 RUN apk add --no-cache tzdata
 
