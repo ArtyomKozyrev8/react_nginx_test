@@ -1,4 +1,4 @@
-FROM node:alpine as build
+FROM node:alpine as builder
 WORKDIR /app
 COPY package*.json /app/
 RUN npm install
@@ -6,6 +6,8 @@ COPY . .
 RUN npm run build
 
 FROM nginx:1.17.4-alpine
+
+COPY --from builder /app/ /app/
 
 RUN apk add --no-cache tzdata
 
