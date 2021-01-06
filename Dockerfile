@@ -1,7 +1,12 @@
 # Name the node stage "builder"
 FROM node:14-alpine AS builder
 # Set working directory
-WORKDIR /app
+WORKDIR /usr/src
+
+RUN apk add --no-cache tzdata
+
+ENV TZ=Europe/Moscow
+
 # Copy all files from current directory to working dir in image
 COPY . .
 # install node modules and build assets
