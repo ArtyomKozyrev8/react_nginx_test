@@ -1,3 +1,13 @@
+Clone the repository:
+
+https://github.com/ArtyomKozyrev8/react_nginx_test.git
+
+**How to build and run the app in Docker:**
+
+docker build -t react_ng_app .
+
+docker run --network=aio_re_net --name react_ng_app -d -p 4444:80 react_ng_app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

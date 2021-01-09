@@ -1,3 +1,5 @@
+// The file is used to setup proxy pf traffic from backend http server
+
 const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = function(app) {
     app.use(
